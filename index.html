@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="title" content="Parameter-Efficient Adaptation of a Multi-Stream Vision-Language Framework for Blind Image Quality Assessment - Bishr Omer Abdelrahman Adam, Xu Li">
+  <meta name="title" content="Parameter-Efficient Adaptation of a Multi-Stream Vision-Language Framework for Blind Image Quality Assessment - Bishr Omer Adam, Xu Li">
   <meta name="description" content="A six-dataset study showing that parameter-efficient LoRA adaptation of a multi-stream vision-language framework recovers BIQA performance in proportion to dataset difficulty, and that the evaluation protocol governs when adaptation helps.">
   <meta name="keywords" content="blind image quality assessment, BIQA, vision-language models, LoRA, parameter-efficient fine-tuning, SigLIP, CLIP, evaluation protocol, computer vision">
   <meta name="author" content="Bishr Omer Adam, Xu Li">
@@ -16,7 +16,7 @@
   <meta property="og:title" content="Parameter-Efficient Adaptation of a Multi-Stream Vision-Language Framework for Blind Image Quality Assessment">
   <meta property="og:description" content="Parameter-efficient adaptation of a multi-stream vision-language framework for BIQA: when and why it helps, across six datasets.">
   <meta property="og:url" content="https://bishr-omer.github.io/lora-biqa/">
-  <meta property="og:image" content="https://bishr-omer.github.io/lora-biqa/static/images/Figure_3.png">
+  <meta property="og:image" content="https://bishr-omer.github.io/lora-biqa/static/images/fig4_adaptation.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Adaptation gain across six datasets">
@@ -24,7 +24,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Parameter-Efficient Adaptation of a Multi-Stream Vision-Language Framework for Blind Image Quality Assessment">
   <meta name="twitter:description" content="Parameter-efficient adaptation of a multi-stream vision-language framework for BIQA: when and why it helps, across six datasets.">
-  <meta name="twitter:image" content="https://bishr-omer.github.io/lora-biqa/static/images/Figure_3.png">
+  <meta name="twitter:image" content="https://bishr-omer.github.io/lora-biqa/static/images/fig4_adaptation.png">
 
   <meta name="citation_title" content="Parameter-Efficient Adaptation of a Multi-Stream Vision-Language Framework for Blind Image Quality Assessment">
   <meta name="citation_author" content="Adam, Bishr Omer">
@@ -60,7 +60,7 @@
     "headline": "Parameter-Efficient Adaptation of a Multi-Stream Vision-Language Framework for Blind Image Quality Assessment",
     "description": "A six-dataset study of parameter-efficient adaptation of a multi-stream vision-language framework for blind image quality assessment.",
     "author": [
-      { "@type": "Person", "name": "Bishr Omer Abdelrahman Adam",
+      { "@type": "Person", "name": "Bishr Omer Adam",
         "affiliation": { "@type": "Organization", "name": "Northwestern Polytechnical University" } },
       { "@type": "Person", "name": "Xu Li",
         "affiliation": { "@type": "Organization", "name": "Northwestern Polytechnical University" } }
@@ -89,7 +89,7 @@
             </h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://github.com/bishr-omer" target="_blank">Bishr Omer Abdelrahman Adam</a>,</span>
+                <a href="https://github.com/bishr-omer" target="_blank">Bishr Omer Adam</a>,</span>
               <span class="author-block">
                 <a href="#" target="_blank">Xu Li</a></span>
             </div>
@@ -99,13 +99,13 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/2606.02002" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fas fa-file-pdf"></i></span>
                     <span>Paper</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/2606.02002" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="ai ai-arxiv"></i></span>
                     <span>arXiv</span>
                   </a>
@@ -127,7 +127,7 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <img src="static/images/Figure_1.png" alt="Architecture overview">
+        <img src="static/images/Figure1.png" alt="Architecture overview">
         <h2 class="subtitle has-text-centered">
           A 138-dimensional natural-scene-statistics descriptor is fused with frozen SigLIP and
           CLIP-H embeddings through a lightweight regression head. For the adaptation study, LoRA
@@ -201,7 +201,7 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Image-level splitting masks dataset difficulty</h2>
-          <img src="static/images/Figure_2.png" alt="Leakage across five datasets">
+          <img src="static/images/fig3_leakage.png" alt="Leakage across five datasets">
           <div class="content has-text-justified" style="margin-top:1rem;">
             <p>
               Frozen SigLIP under image-level versus reference-level splitting across five synthetic
@@ -220,7 +220,7 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Adaptation helps in proportion to difficulty</h2>
-          <img src="static/images/Figure_3.png" alt="Adaptation across six datasets">
+          <img src="static/images/fig4_adaptation.png" alt="Adaptation across six datasets">
           <div class="content has-text-justified" style="margin-top:1rem;">
             <p>
               Frozen versus LoRA-adapted SigLIP under reference-level evaluation, ordered by frozen
@@ -282,7 +282,7 @@
       <pre><code>@article{adam2026peft,
   title   = {Parameter-Efficient Adaptation of a Multi-Stream Vision-Language
              Framework for Blind Image Quality Assessment},
-  author  = {Adam, Bishr Omer Abdelrahman and Li, Xu},
+  author  = {Adam, Bishr Omer and Li, Xu},
   journal = {Under review},
   year    = {2026}
 }</code></pre>
