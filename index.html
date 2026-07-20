@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="title" content="Low-Rank Adaptation of Frozen Vision-Language Models for Blind Image Quality Assessment - Bishr Omer Abdelrahman Adam, Xu Li">
-  <meta name="description" content="A six-dataset study showing that parameter-efficient LoRA adaptation of frozen vision-language models recovers BIQA performance in proportion to dataset difficulty, and that the evaluation protocol governs when adaptation helps.">
+  <meta name="title" content="Parameter-Efficient Adaptation of a Multi-Stream Vision-Language Framework for Blind Image Quality Assessment - Bishr Omer Abdelrahman Adam, Xu Li">
+  <meta name="description" content="A six-dataset study showing that parameter-efficient LoRA adaptation of a multi-stream vision-language framework recovers BIQA performance in proportion to dataset difficulty, and that the evaluation protocol governs when adaptation helps.">
   <meta name="keywords" content="blind image quality assessment, BIQA, vision-language models, LoRA, parameter-efficient fine-tuning, SigLIP, CLIP, evaluation protocol, computer vision">
   <meta name="author" content="Bishr Omer Adam, Xu Li">
   <meta name="robots" content="index, follow">
@@ -13,20 +13,20 @@
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Northwestern Polytechnical University">
-  <meta property="og:title" content="Low-Rank Adaptation of Frozen Vision-Language Models for Blind Image Quality Assessment">
-  <meta property="og:description" content="Parameter-efficient adaptation of frozen VLMs for BIQA: when and why it helps, across six datasets.">
+  <meta property="og:title" content="Parameter-Efficient Adaptation of a Multi-Stream Vision-Language Framework for Blind Image Quality Assessment">
+  <meta property="og:description" content="Parameter-efficient adaptation of a multi-stream vision-language framework for BIQA: when and why it helps, across six datasets.">
   <meta property="og:url" content="https://bishr-omer.github.io/lora-biqa/">
-  <meta property="og:image" content="https://bishr-omer.github.io/lora-biqa/static/images/fig4_adaptation.png">
+  <meta property="og:image" content="https://bishr-omer.github.io/lora-biqa/static/images/Figure_3.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Adaptation gain across six datasets">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Low-Rank Adaptation of Frozen Vision-Language Models for Blind Image Quality Assessment">
-  <meta name="twitter:description" content="Parameter-efficient adaptation of frozen VLMs for BIQA: when and why it helps, across six datasets.">
-  <meta name="twitter:image" content="https://bishr-omer.github.io/lora-biqa/static/images/fig4_adaptation.png">
+  <meta name="twitter:title" content="Parameter-Efficient Adaptation of a Multi-Stream Vision-Language Framework for Blind Image Quality Assessment">
+  <meta name="twitter:description" content="Parameter-efficient adaptation of a multi-stream vision-language framework for BIQA: when and why it helps, across six datasets.">
+  <meta name="twitter:image" content="https://bishr-omer.github.io/lora-biqa/static/images/Figure_3.png">
 
-  <meta name="citation_title" content="Low-Rank Adaptation of Frozen Vision-Language Models for Blind Image Quality Assessment">
+  <meta name="citation_title" content="Parameter-Efficient Adaptation of a Multi-Stream Vision-Language Framework for Blind Image Quality Assessment">
   <meta name="citation_author" content="Adam, Bishr Omer">
   <meta name="citation_author" content="Li, Xu">
   <meta name="citation_publication_date" content="2026">
@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-  <title>Low-Rank Adaptation of Frozen VLMs for BIQA</title>
+  <title>Parameter-Efficient Adaptation of a Multi-Stream VLM Framework for BIQA</title>
 
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="apple-touch-icon" href="static/images/favicon.ico">
@@ -57,10 +57,10 @@
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "Low-Rank Adaptation of Frozen Vision-Language Models for Blind Image Quality Assessment",
-    "description": "A six-dataset study of parameter-efficient adaptation of frozen vision-language models for blind image quality assessment.",
+    "headline": "Parameter-Efficient Adaptation of a Multi-Stream Vision-Language Framework for Blind Image Quality Assessment",
+    "description": "A six-dataset study of parameter-efficient adaptation of a multi-stream vision-language framework for blind image quality assessment.",
     "author": [
-      { "@type": "Person", "name": "Bishr Omer Adam",
+      { "@type": "Person", "name": "Bishr Omer Abdelrahman Adam",
         "affiliation": { "@type": "Organization", "name": "Northwestern Polytechnical University" } },
       { "@type": "Person", "name": "Xu Li",
         "affiliation": { "@type": "Organization", "name": "Northwestern Polytechnical University" } }
@@ -85,11 +85,11 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title">
-              Low-Rank Adaptation of Frozen Vision-Language Models<br>for Blind Image Quality Assessment
+              Parameter-Efficient Adaptation of a Multi-Stream Vision-Language Framework<br>for Blind Image Quality Assessment
             </h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://github.com/bishr-omer" target="_blank">Bishr Omer Adam</a>,</span>
+                <a href="https://github.com/bishr-omer" target="_blank">Bishr Omer Abdelrahman Adam</a>,</span>
               <span class="author-block">
                 <a href="#" target="_blank">Xu Li</a></span>
             </div>
@@ -127,11 +127,11 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <img src="static/images/Figure1.png" alt="Architecture overview">
+        <img src="static/images/Figure_1.png" alt="Architecture overview">
         <h2 class="subtitle has-text-centered">
           A 138-dimensional natural-scene-statistics descriptor is fused with frozen SigLIP and
           CLIP-H embeddings through a lightweight regression head. For the adaptation study, LoRA
-          adapters are applied to the SigLIP backbone only, training just 0.23% of its parameters.
+          adapters are applied to the SigLIP stream only, training just 0.23% of its parameters.
         </h2>
       </div>
     </div>
@@ -145,20 +145,24 @@
           <div class="content has-text-justified">
             <p>
               Blind image quality assessment (BIQA) increasingly relies on frozen vision-language
-              model (VLM) embeddings, which are efficient but leave open how much performance is
-              sacrificed by not adapting the backbone. We study this question alongside the protocol
-              used to evaluate it. We build an efficient BIQA system that fuses a 138-dimensional
-              natural-scene-statistics descriptor with frozen SigLIP and CLIP-H embeddings through a
-              lightweight regression head, then apply parameter-efficient Low-Rank Adaptation (LoRA)
-              to the SigLIP backbone, training only 0.23% of its parameters, which raises Spearman
-              correlation on KonIQ-10k from 0.887 to 0.951. On synthetic-distortion benchmarks the
-              choice of evaluation protocol proves decisive: under image-level splitting, content
-              overlap inflates frozen-feature performance by 0.06 to 0.44 across five datasets, with
-              no dependence on the number of reference images. Image-level splitting yields uniformly
-              high scores that mask wide variation in true difficulty, revealed only under
-              reference-level splitting. Across six datasets, parameter-efficient adaptation recovers
-              performance in proportion to this difficulty: gains are largest where frozen features
-              are weakest (up to +0.357 SROCC on TID2013) and negligible where they are already strong.
+              model (VLM) embeddings, which are efficient but leave open how much accuracy is lost
+              without backbone adaptation and when such adaptation helps. This question is
+              complicated by the common use of image-level splitting on synthetic-distortion
+              benchmarks, where distorted versions of the same reference image appear in both
+              training and test sets; the resulting content overlap inflates the apparent
+              performance of frozen representations and can mislead conclusions about adaptation.
+              This article addresses both issues jointly. First, an efficient BIQA framework is
+              developed that fuses a natural-scene-statistics descriptor with frozen SigLIP and
+              CLIP-H embeddings through a lightweight regression head. Second, its SigLIP stream is
+              adapted with parameter-efficient Low-Rank Adaptation (LoRA), training only 0.23% of
+              the backbone parameters. Finally, the frozen and adapted models are evaluated across
+              six datasets under image-level and reference-level protocols. Image-level splitting is
+              shown to inflate frozen-feature SROCC by up to 0.44 and to mask wide variation in true
+              difficulty that only reference-level evaluation reveals. Under this protocol, adapting
+              the SigLIP stream raises SROCC by up to 0.328 on TID2013 (from 0.514 to 0.842) while
+              updating only 0.23% of parameters, with little benefit where frozen features are
+              already strong. The adaptation is thus a targeted extension of the framework that
+              restores accuracy precisely where the frozen system is weakest.
             </p>
           </div>
         </div>
@@ -173,15 +177,18 @@
           <h2 class="title is-3">Key Findings</h2>
           <div class="content is-size-5">
             <ul>
-              <li>Parameter-efficient LoRA adaptation of a frozen SigLIP backbone (0.23% of
-                  parameters) raises KonIQ-10k SROCC from 0.887 to 0.951.</li>
+              <li>Parameter-efficient LoRA adaptation of a frozen SigLIP stream (0.23% of
+                  parameters) raises KonIQ-10k SROCC from 0.887 to 0.948 &plusmn; 0.004.</li>
               <li>Image-level splitting makes every synthetic dataset look uniformly easy
-                  (0.95&ndash;0.97); reference-level splitting reveals their true difficulty
+                  (0.79&ndash;0.97); reference-level splitting reveals their true difficulty
                   (0.51&ndash;0.91).</li>
               <li>The inflation from content overlap (0.06&ndash;0.44) is <b>not</b> explained by
                   the number of reference images (rank correlation &rho;&nbsp;=&nbsp;&minus;0.05).</li>
               <li>Across six datasets, adaptation gain tracks frozen-feature weakness: largest where
                   frozen features are weak, negligible where they are already strong.</li>
+              <li>Compared against DoRA and AdaLoRA under an identical protocol, vanilla LoRA
+                  matches or beats both alternatives while training fewer parameters and in less
+                  time.</li>
             </ul>
           </div>
         </div>
@@ -194,7 +201,7 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Image-level splitting masks dataset difficulty</h2>
-          <img src="static/images/fig3_leakage.png" alt="Leakage across five datasets">
+          <img src="static/images/Figure_2.png" alt="Leakage across five datasets">
           <div class="content has-text-justified" style="margin-top:1rem;">
             <p>
               Frozen SigLIP under image-level versus reference-level splitting across five synthetic
@@ -213,25 +220,55 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Adaptation helps in proportion to difficulty</h2>
-          <img src="static/images/fig4_adaptation.png" alt="Adaptation across six datasets">
+          <img src="static/images/Figure_3.png" alt="Adaptation across six datasets">
           <div class="content has-text-justified" style="margin-top:1rem;">
             <p>
               Frozen versus LoRA-adapted SigLIP under reference-level evaluation, ordered by frozen
-              strength. The gain (labeled) is largest where frozen features are weakest and
-              negligible where they are already strong.
+              strength. Each entry is the mean &plusmn; std over multiple reference-level splits,
+              with the epoch selected on a held-out validation partition. The gain (labeled) is
+              largest where frozen features are weakest and negligible where they are already
+              strong.
             </p>
           </div>
           <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
             <thead>
-              <tr><th>Dataset</th><th>Frozen</th><th>+ LoRA</th><th>&Delta;</th></tr>
+              <tr><th>Dataset</th><th>Frozen</th><th>+ LoRA</th><th>&Delta;</th><th>n</th></tr>
             </thead>
             <tbody>
-              <tr><td>TID2013</td><td>0.514</td><td>0.871</td><td>+0.357</td></tr>
-              <tr><td>PIPAL</td><td>0.576</td><td>0.707</td><td>+0.131</td></tr>
-              <tr><td>KADID-10k</td><td>0.787</td><td>0.927</td><td>+0.141</td></tr>
-              <tr><td>KonIQ-10k</td><td>0.887</td><td>0.951</td><td>+0.064</td></tr>
-              <tr><td>LIVE-MD</td><td>0.904</td><td>0.893</td><td>&minus;0.011</td></tr>
-              <tr><td>CSIQ</td><td>0.912</td><td>0.927</td><td>+0.015</td></tr>
+              <tr><td>TID2013</td><td>0.514</td><td>0.842 &plusmn; 0.071</td><td>+0.328</td><td>5</td></tr>
+              <tr><td>PIPAL</td><td>0.576</td><td>0.659 &plusmn; 0.010</td><td>+0.083</td><td>2</td></tr>
+              <tr><td>KADID-10k</td><td>0.787</td><td>0.921 &plusmn; 0.009</td><td>+0.134</td><td>3</td></tr>
+              <tr><td>KonIQ-10k</td><td>0.887</td><td>0.948 &plusmn; 0.004</td><td>+0.061</td><td>3</td></tr>
+              <tr><td>LIVE-MD</td><td>0.904</td><td>0.911 &plusmn; 0.027</td><td>+0.007</td><td>5</td></tr>
+              <tr><td>CSIQ</td><td>0.912</td><td>0.946 &plusmn; 0.013</td><td>+0.034</td><td>5</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">LoRA vs. DoRA vs. AdaLoRA</h2>
+          <div class="content has-text-justified" style="margin-top:1rem;">
+            <p>
+              On TID2013, under an identical reference-level protocol with validation-based epoch
+              selection, DoRA matches vanilla LoRA within run-to-run variance at roughly four times
+              the training cost, and AdaLoRA underperforms both at a higher trainable-parameter
+              count. Neither alternative improves on vanilla LoRA for this task.
+            </p>
+          </div>
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+              <tr><th>Method</th><th>SROCC</th><th>Trainable</th><th>Rel. time</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>LoRA</td><td>0.842 &plusmn; 0.071</td><td>0.232%</td><td>1.0&times;</td></tr>
+              <tr><td>DoRA</td><td>0.819 &plusmn; 0.083</td><td>0.246%</td><td>4.3&times;</td></tr>
+              <tr><td>AdaLoRA</td><td>0.782 &plusmn; 0.084</td><td>0.348%</td><td>3.2&times;</td></tr>
             </tbody>
           </table>
         </div>
@@ -242,10 +279,10 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{adam2026lora,
-  title   = {Low-Rank Adaptation of Frozen Vision-Language Models
-             for Blind Image Quality Assessment},
-  author  = {Adam, Bishr Omer and Li, Xu},
+      <pre><code>@article{adam2026peft,
+  title   = {Parameter-Efficient Adaptation of a Multi-Stream Vision-Language
+             Framework for Blind Image Quality Assessment},
+  author  = {Adam, Bishr Omer Abdelrahman and Li, Xu},
   journal = {Under review},
   year    = {2026}
 }</code></pre>
